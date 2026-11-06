@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootleg, Beachleg — Ropa vintage en Argentina</title>
-<meta name="description" content="Bootleg, Beachleg: ropa vintage y bootleg seleccionada a mano. Envíos a todo el país, pagá con Mercado Pago, transferencia o efectivo.">
+<title>Bitchleg — Ropa vintage en Argentina</title>
+<meta name="description" content="Bitchleg: ropa vintage y bootleg seleccionada a mano. Envíos a todo el país, pagá con Mercado Pago, transferencia o efectivo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@ footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
 
 <header>
   <div class="wrap bar">
-    <a class="logo display" href="#top">Bootleg,<br><b>Beach</b><i>leg</i></a>
+    <a class="logo display" href="#top"><b>Bitch</b><i>leg</i></a>
     <div class="search"><input id="q" type="search" placeholder="Buscá remeras, camperas, jeans…" aria-label="Buscar"></div>
     <button class="cartbtn" id="openCart">Carrito<span id="count">0</span></button>
   </div>
@@ -129,7 +129,7 @@ footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
 <section class="wrap about">
   <div><h2 class="display">Qué es esto</h2></div>
   <div>
-    <p>Bootleg, Beachleg nació en una feria de Palermo con tres percheros y mucho viento de río. Buscamos ropa vintage, deportiva de los 90 y estampas bootleg con onda de playa: colores quemados por el sol y tela que ya vivió.</p>
+    <p>Bitchleg nació en una feria de Palermo con tres percheros y mucho viento de río. Buscamos ropa vintage, deportiva de los 90 y estampas bootleg con onda de playa: colores quemados por el sol y tela que ya vivió.</p>
     <p>Cada prenda se lava, se revisa y se mide antes de subirla. Los detalles y marcas de uso van en la descripción, porque lo vintage tiene historia.</p>
   </div>
 </section>
@@ -137,8 +137,8 @@ footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
-    <div><strong class="display">Bootleg, Beachleg</strong><br>Buenos Aires, Argentina</div>
-    <div>Instagram <a href="https://instagram.com/bootlegbeachleg">@bootlegbeachleg</a><br>WhatsApp +54 9 11 5555-0000</div>
+    <div><strong class="display">Bitchleg</strong><br>Buenos Aires, Argentina</div>
+    <div>Instagram <a href="https://instagram.com/bitchleg">@bitchleg</a><br>WhatsApp +54 9 11 5555-0000</div>
     <div>© <span id="y"></span> · Cada pieza es única</div>
   </div>
 </footer>
@@ -224,7 +224,7 @@ $("closeCart").onclick=$("veil").onclick=()=>toggle(false);
 $("checkout").onclick=()=>{
   const items=cart.map(id=>P.find(p=>p.id===id));
   const tot=items.reduce((a,p)=>a+p.p,0);
-  const msg=`Hola Bootleg, Beachleg! Quiero comprar:\n${items.map(p=>`• ${p.t} (talle ${p.talle}) – ${ARS(p.p)}`).join("\n")}\n\nTotal: ${ARS(tot)}\nNombre: ${$("name").value||"-"}\nLocalidad: ${$("loc").value||"-"}`;
+  const msg=`Hola Bitchleg! Quiero comprar:\n${items.map(p=>`• ${p.t} (talle ${p.talle}) – ${ARS(p.p)}`).join("\n")}\n\nTotal: ${ARS(tot)}\nNombre: ${$("name").value||"-"}\nLocalidad: ${$("loc").value||"-"}`;
   window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
 };
 $("y").textContent=new Date().getFullYear();
