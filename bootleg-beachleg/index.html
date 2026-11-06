@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootleg, Beachleg — Ropa vintage en Argentina</title>
+<meta name="description" content="Bootleg, Beachleg: ropa vintage y bootleg seleccionada a mano. Envíos a todo el país, pagá con Mercado Pago, transferencia o efectivo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#f6ecd9;--ink:#1b1b1b;--sun:#ff7a1a;--sea:#0e8f8c;--pink:#ff4f8b;--card:#fffaf0;--line:#1b1b1b}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.45}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+.display{font-family:'Archivo Black',Impact,sans-serif;text-transform:uppercase;letter-spacing:-.02em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.marquee{background:var(--ink);color:var(--sand);overflow:hidden;white-space:nowrap;font-size:13px;padding:8px 0}
+.marquee span{display:inline-block;padding-left:100%;animation:m 28s linear infinite}
+@keyframes m{to{transform:translateX(-100%)}}
+header{position:sticky;top:0;z-index:20;background:var(--sand);border-bottom:2px solid var(--line)}
+.bar{display:flex;align-items:center;gap:14px;padding:12px 0;flex-wrap:wrap}
+.logo{font-size:22px;line-height:.95;text-decoration:none}
+.logo b{color:var(--sun)}.logo i{color:var(--sea);font-style:normal}
+.search{flex:1;min-width:180px}
+.search input{width:100%;padding:10px 14px;border:2px solid var(--line);border-radius:999px;background:#fff;font:inherit}
+.cartbtn{background:var(--ink);color:var(--sand);border:0;border-radius:999px;padding:10px 18px;font-weight:700}
+.cartbtn span{background:var(--sun);color:var(--ink);border-radius:999px;padding:1px 8px;margin-left:6px}
+.hero{padding:40px 0 28px;display:grid;gap:24px;grid-template-columns:1.2fr 1fr;align-items:center}
+.hero h1{font-size:clamp(44px,8vw,96px);line-height:.88}
+.hero h1 em{font-style:normal;color:var(--sun)}
+.hero h1 u{text-decoration:none;color:var(--sea)}
+.hero p{max-width:46ch;margin:18px 0 22px;font-size:18px}
+.btn{display:inline-block;background:var(--sun);color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:12px 22px;font-weight:700;text-decoration:none;box-shadow:4px 4px 0 var(--line)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--line)}
+.sun{aspect-ratio:1;border:2px solid var(--line);border-radius:50%;background:radial-gradient(circle at 50% 40%,#ffd36a,var(--sun) 60%,var(--pink));display:grid;place-items:center;max-width:380px;justify-self:center;width:100%;position:relative;overflow:hidden}
+.sun::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;background:repeating-linear-gradient(0deg,var(--sea) 0 10px,#0b6f6d 10px 20px);border-top:2px solid var(--line)}
+.sun span{font-size:clamp(28px,5vw,54px);transform:rotate(-8deg);text-align:center;line-height:.95;z-index:1;color:var(--ink)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px 0;border-top:2px solid var(--line)}
+.chip{border:2px solid var(--line);background:transparent;border-radius:999px;padding:6px 14px;font-weight:500}
+.chip.on{background:var(--ink);color:var(--sand)}
+.filters .sp{flex:1}
+select,.price input{border:2px solid var(--line);border-radius:10px;background:#fff;padding:7px 10px;font:inherit}
+.price{display:flex;gap:6px;align-items:center;font-size:14px}.price input{width:96px}
+h2.display{font-size:30px;margin:6px 0 14px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));padding-bottom:40px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s}
+.card:hover{transform:translateY(-4px) rotate(-.4deg)}
+.pic{aspect-ratio:1;display:grid;place-items:center;border-bottom:2px solid var(--line);position:relative}
+.pic svg{width:72%;height:72%}
+.tag{position:absolute;top:10px;left:10px;background:var(--ink);color:var(--sand);font-size:11px;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+.info{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info h3{font-size:16px;font-weight:700}
+.meta{font-size:13px;opacity:.75}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
+.pr{font-family:'Archivo Black';font-size:19px}
+.add{background:var(--ink);color:var(--sand);border:0;border-radius:10px;padding:8px 12px;font-weight:700}
+.add[disabled]{opacity:.4;cursor:default}
+.empty{grid-column:1/-1;text-align:center;padding:40px 0}
+.info-band{background:var(--sea);color:#fff;border-block:2px solid var(--line);padding:34px 0}
+.info-band .wrap{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.info-band h3{font-family:'Archivo Black';text-transform:uppercase;margin-bottom:4px}
+.about{padding:44px 0;display:grid;gap:24px;grid-template-columns:1fr 1fr}
+.about p+p{margin-top:12px}
+footer{background:var(--ink);color:var(--sand);padding:30px 0;font-size:14px}
+footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+#drawer{position:fixed;inset:0 0 0 auto;width:min(400px,100%);background:var(--sand);border-left:2px solid var(--line);transform:translateX(105%);transition:transform .25s;z-index:40;display:flex;flex-direction:column}
+#drawer.open{transform:none}
+#veil{position:fixed;inset:0;background:#0007;opacity:0;pointer-events:none;transition:.25s;z-index:30}
+#veil.open{opacity:1;pointer-events:auto}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:2px solid var(--line)}
+.dh button{background:none;border:0;font-size:26px}
+#items{flex:1;overflow:auto;padding:12px 16px}
+.it{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed #0004}
+.it .sw{width:46px;height:46px;border-radius:8px;border:2px solid var(--line);flex:none}
+.it div{flex:1;font-size:14px}.it button{background:none;border:0;font-size:20px}
+.df{padding:16px;border-top:2px solid var(--line);display:grid;gap:10px}
+.df .tot{display:flex;justify-content:space-between;font-family:'Archivo Black';font-size:20px}
+.df input{padding:9px 12px;border:2px solid var(--line);border-radius:10px;font:inherit}
+.df small{opacity:.7}
+@media(max-width:760px){.hero,.about{grid-template-columns:1fr}.sun{max-width:240px}}
+</style>
+</head>
+<body>
+<div class="marquee"><span>🌊 Envíos a todo el país · Andreani y Correo Argentino · Mercado Pago, transferencia o efectivo · Piezas únicas: lo que ves es lo que hay · Retiro en Palermo, CABA 🌊</span></div>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo display" href="#top">Bootleg,<br><b>Beach</b><i>leg</i></a>
+    <div class="search"><input id="q" type="search" placeholder="Buscá remeras, camperas, jeans…" aria-label="Buscar"></div>
+    <button class="cartbtn" id="openCart">Carrito<span id="count">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="wrap hero">
+  <div>
+    <h1 class="display">Ropa <em>vintage</em><br>con sal y <u>arena</u></h1>
+    <p>Remeras bootleg, camperas de los 90 y jeans con historia. Todo seleccionado a mano en Buenos Aires, una sola pieza de cada una. Si te gusta, corré.</p>
+    <a class="btn" href="#tienda">Ver la tienda</a>
+  </div>
+  <div class="sun"><span class="display">Verano<br>eterno<br>'94</span></div>
+</section>
+
+<section class="wrap" id="tienda">
+  <h2 class="display">La tienda</h2>
+  <div class="filters">
+    <div id="cats"></div>
+    <div class="sp"></div>
+    <div class="price">$ <input id="min" type="number" min="0" placeholder="Mín"> – <input id="max" type="number" min="0" placeholder="Máx"></div>
+    <select id="sort" aria-label="Ordenar">
+      <option value="new">Más nuevo</option>
+      <option value="asc">Precio: menor a mayor</option>
+      <option value="desc">Precio: mayor a menor</option>
+    </select>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="info-band">
+  <div class="wrap">
+    <div><h3>Envíos</h3>Despachamos en 48 hs hábiles por Andreani o Correo Argentino a todo el país. Gratis a partir de $120.000.</div>
+    <div><h3>Pagos</h3>Mercado Pago (hasta 3 cuotas sin interés), transferencia con 10% off o efectivo en el retiro.</div>
+    <div><h3>Cambios</h3>Tenés 7 días para cambiar por otra pieza si el talle no te quedó. Pedinos las medidas antes, sin drama.</div>
+  </div>
+</section>
+
+<section class="wrap about">
+  <div><h2 class="display">Qué es esto</h2></div>
+  <div>
+    <p>Bootleg, Beachleg nació en una feria de Palermo con tres percheros y mucho viento de río. Buscamos ropa vintage, deportiva de los 90 y estampas bootleg con onda de playa: colores quemados por el sol y tela que ya vivió.</p>
+    <p>Cada prenda se lava, se revisa y se mide antes de subirla. Los detalles y marcas de uso van en la descripción, porque lo vintage tiene historia.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong class="display">Bootleg, Beachleg</strong><br>Buenos Aires, Argentina</div>
+    <div>Instagram <a href="https://instagram.com/bootlegbeachleg">@bootlegbeachleg</a><br>WhatsApp +54 9 11 5555-0000</div>
+    <div>© <span id="y"></span> · Cada pieza es única</div>
+  </div>
+</footer>
+
+<div id="veil"></div>
+<aside id="drawer" aria-label="Carrito">
+  <div class="dh"><strong class="display">Tu carrito</strong><button id="closeCart" aria-label="Cerrar">×</button></div>
+  <div id="items"></div>
+  <div class="df">
+    <div class="tot"><span>Total</span><span id="total">$0</span></div>
+    <input id="name" placeholder="Tu nombre">
+    <input id="loc" placeholder="Localidad / provincia">
+    <button class="btn" id="checkout">Finalizar por WhatsApp</button>
+    <small>Te confirmamos stock, envío y forma de pago por WhatsApp. Sin cargos ocultos.</small>
+  </div>
+</aside>
+
+<script>
+const WA = "5491155550000"; // cambiá por tu número real
+const ARS = n => "$" + n.toLocaleString("es-AR");
+
+// Siluetas simples por categoría
+const SHAPES = {
+  remera:'<path d="M30 20l22-8c4 8 12 8 16 0l22 8 14 24-18 8v44H34V52L16 44z"/>',
+  campera:'<path d="M28 18l22-6 10 8 10-8 22 6 10 30-14 4v46H32V52l-14-4z"/><path d="M60 20v78" fill="none"/>',
+  jean:'<path d="M32 12h56l6 96H66L60 50l-6 58H26z"/><path d="M32 24h56" fill="none"/>',
+  buzo:'<path d="M26 18l24-6c6 8 14 8 20 0l24 6 12 32-14 6v42H32V56l-14-6z"/><path d="M44 62h32v16H44z" fill="none"/>',
+  vestido:'<path d="M44 10h32l4 26 18 76H22l18-76z"/><path d="M42 36h36" fill="none"/>',
+  short:'<path d="M30 20h60l4 56H66L60 46l-6 30H26z"/>'
+};
+const P = [
+ {id:1,t:"Remera bootleg Bob Marley 90s",c:"Remeras",s:"remera",talle:"L",est:"Muy bueno",p:28000,col:"#ff7a1a",ink:"#1b1b1b",n:12},
+ {id:2,t:"Remera Quiksilver surf desteñida",c:"Remeras",s:"remera",talle:"M",est:"Bueno, desteñido",p:24500,col:"#0e8f8c",ink:"#fffaf0",n:11},
+ {id:3,t:"Campera cortaviento Adidas tricolor",c:"Camperas",s:"campera",talle:"XL",est:"Muy bueno",p:72000,col:"#ff4f8b",ink:"#fffaf0",n:10},
+ {id:4,t:"Campera de jean Levi's sin mangas",c:"Camperas",s:"campera",talle:"M",est:"Excelente",p:89000,col:"#4a78a8",ink:"#fffaf0",n:9},
+ {id:5,t:"Jean Wrangler recto tiro alto",c:"Pantalones",s:"jean",talle:"38",est:"Muy bueno",p:58000,col:"#3f5f8a",ink:"#fffaf0",n:8},
+ {id:6,t:"Jean Lee baggy años 2000",c:"Pantalones",s:"jean",talle:"42",est:"Bueno",p:54000,col:"#6e8fb5",ink:"#1b1b1b",n:7},
+ {id:7,t:"Buzo canguro Nike swoosh",c:"Buzos",s:"buzo",talle:"L",est:"Muy bueno",p:65000,col:"#e8d9b5",ink:"#1b1b1b",n:6},
+ {id:8,t:"Buzo Champion reverse weave",c:"Buzos",s:"buzo",talle:"M",est:"Excelente",p:78000,col:"#c2362f",ink:"#fffaf0",n:5},
+ {id:9,t:"Vestido de playa estampa floral 70s",c:"Vestidos",s:"vestido",talle:"S",est:"Excelente",p:49000,col:"#ffd36a",ink:"#1b1b1b",n:4},
+ {id:10,t:"Vestido camisero a rayas",c:"Vestidos",s:"vestido",talle:"M",est:"Muy bueno",p:42000,col:"#0e8f8c",ink:"#fffaf0",n:3},
+ {id:11,t:"Short de baño Billabong palmeras",c:"Shorts",s:"short",talle:"L",est:"Muy bueno",p:22000,col:"#ff4f8b",ink:"#1b1b1b",n:2},
+ {id:12,t:"Short deportivo Umbro retro",c:"Shorts",s:"short",talle:"M",est:"Bueno",p:19000,col:"#2b2b2b",ink:"#fffaf0",n:1}
+];
+const state={cat:"Todo",q:"",min:null,max:null,sort:"new"};
+const cart=(()=>{try{return JSON.parse(localStorage.getItem("bb_cart"))||[]}catch(e){return []}})();
+const save=()=>{try{localStorage.setItem("bb_cart",JSON.stringify(cart))}catch(e){}};
+const $=id=>document.getElementById(id);
+
+function art(p){return `<svg viewBox="0 0 120 120" aria-hidden="true"><g fill="${p.col}" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round">${SHAPES[p.s]}</g><text x="60" y="${p.s==='jean'||p.s==='short'?36:62}" text-anchor="middle" font-family="Archivo Black" font-size="9" fill="${p.ink}">BB</text></svg>`}
+
+function renderCats(){
+  const cats=["Todo",...new Set(P.map(p=>p.c))];
+  $("cats").innerHTML=cats.map(c=>`<button class="chip ${c===state.cat?"on":""}" data-c="${c}">${c}</button>`).join(" ");
+}
+function renderGrid(){
+  let l=P.filter(p=>(state.cat==="Todo"||p.c===state.cat)&&p.t.toLowerCase().includes(state.q)&&(state.min==null||p.p>=state.min)&&(state.max==null||p.p<=state.max));
+  l.sort((a,b)=>state.sort==="asc"?a.p-b.p:state.sort==="desc"?b.p-a.p:b.n-a.n);
+  $("grid").innerHTML=l.length?l.map(p=>{const inC=cart.includes(p.id);return `<article class="card">
+    <div class="pic" style="background:${p.col}33">${art(p)}<span class="tag">${p.s}</span></div>
+    <div class="info"><h3>${p.t}</h3><div class="meta">Talle ${p.talle} · ${p.est}</div>
+    <div class="row"><span class="pr">${ARS(p.p)}</span><button class="add" data-id="${p.id}" ${inC?"disabled":""}>${inC?"En carrito":"Agregar"}</button></div></div></article>`}).join(""):'<p class="empty">No encontramos nada con esos filtros. Probá con otra búsqueda 🏖️</p>';
+}
+function renderCart(){
+  const items=cart.map(id=>P.find(p=>p.id===id));
+  $("count").textContent=items.length;
+  $("items").innerHTML=items.length?items.map(p=>`<div class="it"><span class="sw" style="background:${p.col}"></span><div><strong>${p.t}</strong><br>Talle ${p.talle} · ${ARS(p.p)}</div><button data-rm="${p.id}" aria-label="Quitar">×</button></div>`).join(""):"<p style='padding:20px 0'>Tu carrito está vacío.</p>";
+  const tot=items.reduce((a,p)=>a+p.p,0);
+  $("total").textContent=ARS(tot);
+  $("checkout").disabled=!items.length;
+}
+const toggle=o=>{$("drawer").classList.toggle("open",o);$("veil").classList.toggle("open",o)};
+
+$("cats").onclick=e=>{const c=e.target.dataset.c;if(c){state.cat=c;renderCats();renderGrid()}};
+$("q").oninput=e=>{state.q=e.target.value.trim().toLowerCase();renderGrid()};
+$("min").oninput=e=>{state.min=e.target.value===""?null:+e.target.value;renderGrid()};
+$("max").oninput=e=>{state.max=e.target.value===""?null:+e.target.value;renderGrid()};
+$("sort").onchange=e=>{state.sort=e.target.value;renderGrid()};
+$("grid").onclick=e=>{const id=+e.target.dataset.id;if(id&&!cart.includes(id)){cart.push(id);save();renderGrid();renderCart();toggle(true)}};
+$("items").onclick=e=>{const id=+e.target.dataset.rm;if(id){cart.splice(cart.indexOf(id),1);save();renderGrid();renderCart()}};
+$("openCart").onclick=()=>toggle(true);
+$("closeCart").onclick=$("veil").onclick=()=>toggle(false);
+$("checkout").onclick=()=>{
+  const items=cart.map(id=>P.find(p=>p.id===id));
+  const tot=items.reduce((a,p)=>a+p.p,0);
+  const msg=`Hola Bootleg, Beachleg! Quiero comprar:\n${items.map(p=>`• ${p.t} (talle ${p.talle}) – ${ARS(p.p)}`).join("\n")}\n\nTotal: ${ARS(tot)}\nNombre: ${$("name").value||"-"}\nLocalidad: ${$("loc").value||"-"}`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
+};
+$("y").textContent=new Date().getFullYear();
+renderCats();renderGrid();renderCart();
+</script>
+</body>
+</html>
