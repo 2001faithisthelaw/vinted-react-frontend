@@ -7,88 +7,95 @@
 <meta name="description" content="Bitchleg: ropa vintage y bootleg seleccionada a mano. Envíos a todo el país, pagá con Mercado Pago, transferencia o efectivo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;0,900;1,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--sand:#f6ecd9;--ink:#1b1b1b;--sun:#ff7a1a;--sea:#0e8f8c;--pink:#ff4f8b;--card:#fffaf0;--line:#1b1b1b}
+:root{--bg:#0d0c0d;--card:#151314;--ink:#e9e4dc;--mute:#8c8a84;--blood:#9b1c26;--violet:#6b4685;--scan:#8d948b;--line:#3a3638}
 *{box-sizing:border-box;margin:0}
-body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.45}
-a{color:inherit}
-button{font:inherit;cursor:pointer}
-.display{font-family:'Archivo Black',Impact,sans-serif;text-transform:uppercase;letter-spacing:-.02em}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;z-index:99;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}button{font:inherit;cursor:pointer}
+.display{font-family:'Bodoni Moda',Georgia,serif;font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
 .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
-.marquee{background:var(--ink);color:var(--sand);overflow:hidden;white-space:nowrap;font-size:13px;padding:8px 0}
-.marquee span{display:inline-block;padding-left:100%;animation:m 28s linear infinite}
+.marquee{background:var(--blood);color:#fff;overflow:hidden;white-space:nowrap;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:8px 0}
+.marquee span{display:inline-block;padding-left:100%;animation:m 40s linear infinite}
 @keyframes m{to{transform:translateX(-100%)}}
-header{position:sticky;top:0;z-index:20;background:var(--sand);border-bottom:2px solid var(--line)}
-.bar{display:flex;align-items:center;gap:14px;padding:12px 0;flex-wrap:wrap}
-.logo{font-size:22px;line-height:.95;text-decoration:none}
-.logo b{color:var(--sun)}.logo i{color:var(--sea);font-style:normal}
+header{position:sticky;top:0;z-index:20;background:#0d0c0dee;backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:14px;padding-block:12px;flex-wrap:wrap}
+.logo{font-size:26px;text-decoration:none;letter-spacing:.04em}
+.logo i{font-style:italic;font-weight:400;text-transform:none;color:var(--blood)}
 .search{flex:1;min-width:180px}
-.search input{width:100%;padding:10px 14px;border:2px solid var(--line);border-radius:999px;background:#fff;font:inherit}
-.cartbtn{background:var(--ink);color:var(--sand);border:0;border-radius:999px;padding:10px 18px;font-weight:700}
-.cartbtn span{background:var(--sun);color:var(--ink);border-radius:999px;padding:1px 8px;margin-left:6px}
-.hero{padding:40px 0 28px;display:grid;gap:24px;grid-template-columns:1.2fr 1fr;align-items:center}
-.hero h1{font-size:clamp(44px,8vw,96px);line-height:.88}
-.hero h1 em{font-style:normal;color:var(--sun)}
-.hero h1 u{text-decoration:none;color:var(--sea)}
-.hero p{max-width:46ch;margin:18px 0 22px;font-size:18px}
-.btn{display:inline-block;background:var(--sun);color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:12px 22px;font-weight:700;text-decoration:none;box-shadow:4px 4px 0 var(--line)}
-.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--line)}
-.sun{aspect-ratio:1;border:2px solid var(--line);border-radius:50%;background:radial-gradient(circle at 50% 40%,#ffd36a,var(--sun) 60%,var(--pink));display:grid;place-items:center;max-width:380px;justify-self:center;width:100%;position:relative;overflow:hidden}
-.sun::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;background:repeating-linear-gradient(0deg,var(--sea) 0 10px,#0b6f6d 10px 20px);border-top:2px solid var(--line)}
-.sun span{font-size:clamp(28px,5vw,54px);transform:rotate(-8deg);text-align:center;line-height:.95;z-index:1;color:var(--ink)}
-.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px 0;border-top:2px solid var(--line)}
-.chip{border:2px solid var(--line);background:transparent;border-radius:999px;padding:6px 14px;font-weight:500}
-.chip.on{background:var(--ink);color:var(--sand)}
+.search input{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:0;background:var(--card);color:var(--ink);font:inherit}
+.search input::placeholder{color:var(--mute)}
+.cartbtn{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:10px 18px;text-transform:uppercase;letter-spacing:.12em;font-size:13px}
+.cartbtn:hover{background:var(--ink);color:var(--bg)}
+.cartbtn span{margin-left:8px;color:var(--blood);font-weight:700}
+.hero{padding-block:56px 40px;display:grid;gap:32px;grid-template-columns:1.3fr 1fr;align-items:center}
+.hero small{letter-spacing:.3em;text-transform:uppercase;color:var(--mute);font-size:12px}
+.hero h1{font-size:clamp(54px,11vw,140px);line-height:.85;margin-top:10px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--blood);text-transform:none}
+.hero p{max-width:44ch;margin:22px 0 26px;color:#c9c4bb}
+.btn{display:inline-block;background:var(--blood);color:#fff;border:1px solid var(--blood);padding:13px 26px;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:13px}
+.btn:hover{background:transparent}
+.btn[disabled]{opacity:.4}
+.scan{aspect-ratio:2/3;max-width:340px;justify-self:center;width:100%;background:linear-gradient(180deg,#98a095,#6f766d);position:relative;overflow:hidden;filter:grayscale(.3) contrast(1.05);box-shadow:0 0 0 1px var(--line),12px 12px 0 -1px #1d1b1c,12px 12px 0 0 var(--line)}
+.scan svg{position:absolute;inset:6% 12% 0}
+.scan::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#0003 0 1px,transparent 1px 3px)}
+.scan b{position:absolute;left:12px;bottom:10px;font:italic 400 14px 'Bodoni Moda',serif;color:#1b1b1b;z-index:2}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:16px 0;border-top:1px solid var(--line)}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);padding:6px 14px;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:2px 0}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .filters .sp{flex:1}
-select,.price input{border:2px solid var(--line);border-radius:10px;background:#fff;padding:7px 10px;font:inherit}
-.price{display:flex;gap:6px;align-items:center;font-size:14px}.price input{width:96px}
-h2.display{font-size:30px;margin:6px 0 14px}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));padding-bottom:40px}
-.card{background:var(--card);border:2px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s}
-.card:hover{transform:translateY(-4px) rotate(-.4deg)}
-.pic{aspect-ratio:1;display:grid;place-items:center;border-bottom:2px solid var(--line);position:relative}
-.pic svg{width:72%;height:72%}
-.tag{position:absolute;top:10px;left:10px;background:var(--ink);color:var(--sand);font-size:11px;padding:3px 9px;border-radius:999px;text-transform:uppercase}
-.info{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
-.info h3{font-size:16px;font-weight:700}
-.meta{font-size:13px;opacity:.75}
-.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
-.pr{font-family:'Archivo Black';font-size:19px}
-.add{background:var(--ink);color:var(--sand);border:0;border-radius:10px;padding:8px 12px;font-weight:700}
-.add[disabled]{opacity:.4;cursor:default}
-.empty{grid-column:1/-1;text-align:center;padding:40px 0}
-.info-band{background:var(--sea);color:#fff;border-block:2px solid var(--line);padding:34px 0}
-.info-band .wrap{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.info-band h3{font-family:'Archivo Black';text-transform:uppercase;margin-bottom:4px}
-.about{padding:44px 0;display:grid;gap:24px;grid-template-columns:1fr 1fr}
+select,.price input{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 10px;font:inherit}
+.price{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--mute)}.price input{width:100px}
+h2.display{font-size:34px;margin:6px 0 14px;font-weight:700}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));padding-bottom:50px}
+.card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.pic{aspect-ratio:3/4;display:grid;place-items:center;border-bottom:1px solid var(--line);position:relative;background:linear-gradient(180deg,#8d948b,#646b63)}
+.pic::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#0002 0 1px,transparent 1px 3px)}
+.pic svg{width:70%;height:70%;position:relative;z-index:1;filter:drop-shadow(0 8px 6px #0006)}
+.card:hover .pic{filter:brightness(1.1)}
+.tag{position:absolute;top:10px;left:10px;z-index:2;background:var(--bg);color:var(--ink);font-size:10px;letter-spacing:.18em;padding:3px 9px;text-transform:uppercase}
+.info{padding:14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info h3{font:700 17px 'Bodoni Moda',serif}
+.meta{font-size:12px;color:var(--mute);letter-spacing:.04em}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px}
+.pr{font-size:18px;font-weight:700}
+.add{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:7px 12px;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.add:hover:not([disabled]){background:var(--blood);border-color:var(--blood)}
+.add[disabled]{opacity:.35;cursor:default}
+.empty{grid-column:1/-1;text-align:center;padding:40px 0;color:var(--mute)}
+.info-band{border-block:1px solid var(--line);padding:36px 0;background:#121011}
+.info-band .wrap{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));color:#c9c4bb;font-size:14px}
+.info-band h3{font:700 16px 'Bodoni Moda',serif;text-transform:uppercase;letter-spacing:.14em;color:var(--ink);margin-bottom:6px}
+.about{padding-block:50px;display:grid;gap:28px;grid-template-columns:1fr 1fr;color:#c9c4bb}
 .about p+p{margin-top:12px}
-footer{background:var(--ink);color:var(--sand);padding:30px 0;font-size:14px}
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--mute)}
 footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
-#drawer{position:fixed;inset:0 0 0 auto;width:min(400px,100%);background:var(--sand);border-left:2px solid var(--line);transform:translateX(105%);transition:transform .25s;z-index:40;display:flex;flex-direction:column}
+footer strong{color:var(--ink)}
+#drawer{position:fixed;inset:0 0 0 auto;width:min(400px,100%);background:var(--card);border-left:1px solid var(--line);transform:translateX(105%);transition:transform .25s;z-index:40;display:flex;flex-direction:column}
 #drawer.open{transform:none}
-#veil{position:fixed;inset:0;background:#0007;opacity:0;pointer-events:none;transition:.25s;z-index:30}
+#veil{position:fixed;inset:0;background:#000a;opacity:0;pointer-events:none;transition:.25s;z-index:30}
 #veil.open{opacity:1;pointer-events:auto}
-.dh{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:2px solid var(--line)}
-.dh button{background:none;border:0;font-size:26px}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--line)}
+.dh button{background:none;border:0;font-size:26px;color:var(--ink)}
 #items{flex:1;overflow:auto;padding:12px 16px}
-.it{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed #0004}
-.it .sw{width:46px;height:46px;border-radius:8px;border:2px solid var(--line);flex:none}
-.it div{flex:1;font-size:14px}.it button{background:none;border:0;font-size:20px}
-.df{padding:16px;border-top:2px solid var(--line);display:grid;gap:10px}
-.df .tot{display:flex;justify-content:space-between;font-family:'Archivo Black';font-size:20px}
-.df input{padding:9px 12px;border:2px solid var(--line);border-radius:10px;font:inherit}
-.df small{opacity:.7}
-@media(max-width:760px){.hero,.about{grid-template-columns:1fr}.sun{max-width:240px}}
+.it{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.it .sw{width:44px;height:44px;border:1px solid var(--line);flex:none}
+.it div{flex:1;font-size:14px}.it button{background:none;border:0;font-size:20px;color:var(--ink)}
+.df{padding:16px;border-top:1px solid var(--line);display:grid;gap:10px}
+.df .tot{display:flex;justify-content:space-between;font:700 20px 'Bodoni Moda',serif}
+.df input{padding:9px 12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.df small{color:var(--mute)}
+@media(max-width:760px){.hero,.about{grid-template-columns:1fr}.scan{max-width:240px}}
 </style>
 </head>
 <body>
-<div class="marquee"><span>🌊 Envíos a todo el país · Andreani y Correo Argentino · Mercado Pago, transferencia o efectivo · Piezas únicas: lo que ves es lo que hay · Retiro en Palermo, CABA 🌊</span></div>
+<div class="marquee"><span>† Cuero, satén y encaje · Archivo 90s / 2000s · Piezas únicas, una sola de cada una · Envíos a todo el país por Andreani y Correo Argentino · Mercado Pago, transferencia o efectivo · Retiro en Palermo, CABA †</span></div>
 
 <header>
   <div class="wrap bar">
-    <a class="logo display" href="#top"><b>Bitch</b><i>leg</i></a>
-    <div class="search"><input id="q" type="search" placeholder="Buscá remeras, camperas, jeans…" aria-label="Buscar"></div>
+    <a class="logo display" href="#top">Bitch<i>leg</i></a>
+    <div class="search"><input id="q" type="search" placeholder="Buscá cuero, satén, botas…" aria-label="Buscar"></div>
     <button class="cartbtn" id="openCart">Carrito<span id="count">0</span></button>
   </div>
 </header>
@@ -96,11 +103,12 @@ footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
 <main id="top">
 <section class="wrap hero">
   <div>
-    <h1 class="display">Ropa <em>vintage</em><br>con sal y <u>arena</u></h1>
-    <p>Remeras bootleg, camperas de los 90 y jeans con historia. Todo seleccionado a mano en Buenos Aires, una sola pieza de cada una. Si te gusta, corré.</p>
-    <a class="btn" href="#tienda">Ver la tienda</a>
+    <small>Archivo vintage · Buenos Aires</small>
+    <h1 class="display">Bitch<em>leg</em></h1>
+    <p>Cuero negro, satén cortado al bies, gargantillas y botas hasta la rodilla. Ropa de pasarela y de revista de los 90 y 2000, rescatada y vendida de a una pieza.</p>
+    <a class="btn" href="#tienda">Entrar al archivo</a>
   </div>
-  <div class="sun"><span class="display">Verano<br>eterno<br>'94</span></div>
+  <div class="scan"><svg viewBox="0 0 120 200" aria-hidden="true"><g fill="#0d0c0d" stroke="#0d0c0d" stroke-width="2"><ellipse cx="60" cy="20" rx="12" ry="15"/><path d="M52 34h16v10l30 10-6 70 14 66H14l14-66-6-70 30-10z"/></g><path d="M52 52l8 14 8-14" fill="none" stroke="#8d948b" stroke-width="1.5"/><path d="M60 62v10m-4-5h8" stroke="#8d948b" stroke-width="1.5"/></svg><b>Ref. 01 — scan de revista</b></div>
 </section>
 
 <section class="wrap" id="tienda">
@@ -120,17 +128,17 @@ footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
 
 <section class="info-band">
   <div class="wrap">
-    <div><h3>Envíos</h3>Despachamos en 48 hs hábiles por Andreani o Correo Argentino a todo el país. Gratis a partir de $120.000.</div>
+    <div><h3>Envíos</h3>Despachamos en 48 hs hábiles por Andreani o Correo Argentino. Cada pieza va envuelta en papel de seda. Gratis desde $150.000.</div>
     <div><h3>Pagos</h3>Mercado Pago (hasta 3 cuotas sin interés), transferencia con 10% off o efectivo en el retiro.</div>
-    <div><h3>Cambios</h3>Tenés 7 días para cambiar por otra pieza si el talle no te quedó. Pedinos las medidas antes, sin drama.</div>
+    <div><h3>Cambios</h3>Al ser piezas únicas, pedinos las medidas antes de comprar. Cambios por otra pieza dentro de los 7 días.</div>
   </div>
 </section>
 
 <section class="wrap about">
   <div><h2 class="display">Qué es esto</h2></div>
   <div>
-    <p>Bitchleg nació en una feria de Palermo con tres percheros y mucho viento de río. Buscamos ropa vintage, deportiva de los 90 y estampas bootleg con onda de playa: colores quemados por el sol y tela que ya vivió.</p>
-    <p>Cada prenda se lava, se revisa y se mide antes de subirla. Los detalles y marcas de uso van en la descripción, porque lo vintage tiene historia.</p>
+    <p>Bitchleg nació como una obsesión con la pasarela oscura de fines de los 90 y principios de los 2000: cuero agrietado, satén negro, transparencias, cadenas y botas con taco fino.</p>
+    <p>Buscamos prendas originales y piezas con esa atmósfera. Cada una se revisa y se mide, y las marcas de uso van en la descripción, porque el desgaste es parte del look.</p>
   </div>
 </section>
 </main>
@@ -139,7 +147,7 @@ footer .wrap{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
   <div class="wrap">
     <div><strong class="display">Bitchleg</strong><br>Buenos Aires, Argentina</div>
     <div>Instagram <a href="https://instagram.com/bitchleg">@bitchleg</a><br>WhatsApp +54 9 11 5555-0000</div>
-    <div>© <span id="y"></span> · Cada pieza es única</div>
+    <div>© <span id="y"></span> · Una sola de cada una</div>
   </div>
 </footer>
 
@@ -162,33 +170,35 @@ const ARS = n => "$" + n.toLocaleString("es-AR");
 
 // Siluetas simples por categoría
 const SHAPES = {
-  remera:'<path d="M30 20l22-8c4 8 12 8 16 0l22 8 14 24-18 8v44H34V52L16 44z"/>',
-  campera:'<path d="M28 18l22-6 10 8 10-8 22 6 10 30-14 4v46H32V52l-14-4z"/><path d="M60 20v78" fill="none"/>',
-  jean:'<path d="M32 12h56l6 96H66L60 50l-6 58H26z"/><path d="M32 24h56" fill="none"/>',
-  buzo:'<path d="M26 18l24-6c6 8 14 8 20 0l24 6 12 32-14 6v42H32V56l-14-6z"/><path d="M44 62h32v16H44z" fill="none"/>',
-  vestido:'<path d="M44 10h32l4 26 18 76H22l18-76z"/><path d="M42 36h36" fill="none"/>',
-  short:'<path d="M30 20h60l4 56H66L60 46l-6 30H26z"/>'
+  campera:'<path d="M34 12l16 4 10 8 10-8 16-4 8 20 10 66-14 6-6-30-4 40H60L56 114l-4 30-14-6 10-66z"/><path d="M60 24v70" fill="none"/>',
+  falda:'<path d="M36 14h48l8 18 14 90H14l14-90z"/><path d="M36 14h48" fill="none"/>',
+  vestido:'<path d="M46 6l2 24-10 22-8 62h60l-8-62-10-22 2-24-4 0-3 22H53l-3-22z"/>',
+  botas:'<path d="M28 8h22v66l18 10 30 4v18H34l-8-12z"/><path d="M52 40h-10" fill="none"/>',
+  guantes:'<path d="M26 4h18l-2 86 6 14H24l-2-14z"/><path d="M76 4h18l2 86-4 14H72l-2-14z"/>',
+  choker:'<path d="M18 36c14 30 70 30 84 0l4 8c-16 40-76 40-92 0z"/><circle cx="60" cy="68" r="5" />',
+  medias:'<path d="M40 6h40l-2 40-8 70-14 4-6-6 6-62z"/><path d="M40 20h40" fill="none"/>',
+  top:'<path d="M42 10c4 22 32 22 36 0l10 14-8 34 6 56H34l6-56-8-34z"/>'
 };
 const P = [
- {id:1,t:"Remera bootleg Bob Marley 90s",c:"Remeras",s:"remera",talle:"L",est:"Muy bueno",p:28000,col:"#ff7a1a",ink:"#1b1b1b",n:12},
- {id:2,t:"Remera Quiksilver surf desteñida",c:"Remeras",s:"remera",talle:"M",est:"Bueno, desteñido",p:24500,col:"#0e8f8c",ink:"#fffaf0",n:11},
- {id:3,t:"Campera cortaviento Adidas tricolor",c:"Camperas",s:"campera",talle:"XL",est:"Muy bueno",p:72000,col:"#ff4f8b",ink:"#fffaf0",n:10},
- {id:4,t:"Campera de jean Levi's sin mangas",c:"Camperas",s:"campera",talle:"M",est:"Excelente",p:89000,col:"#4a78a8",ink:"#fffaf0",n:9},
- {id:5,t:"Jean Wrangler recto tiro alto",c:"Pantalones",s:"jean",talle:"38",est:"Muy bueno",p:58000,col:"#3f5f8a",ink:"#fffaf0",n:8},
- {id:6,t:"Jean Lee baggy años 2000",c:"Pantalones",s:"jean",talle:"42",est:"Bueno",p:54000,col:"#6e8fb5",ink:"#1b1b1b",n:7},
- {id:7,t:"Buzo canguro Nike swoosh",c:"Buzos",s:"buzo",talle:"L",est:"Muy bueno",p:65000,col:"#e8d9b5",ink:"#1b1b1b",n:6},
- {id:8,t:"Buzo Champion reverse weave",c:"Buzos",s:"buzo",talle:"M",est:"Excelente",p:78000,col:"#c2362f",ink:"#fffaf0",n:5},
- {id:9,t:"Vestido de playa estampa floral 70s",c:"Vestidos",s:"vestido",talle:"S",est:"Excelente",p:49000,col:"#ffd36a",ink:"#1b1b1b",n:4},
- {id:10,t:"Vestido camisero a rayas",c:"Vestidos",s:"vestido",talle:"M",est:"Muy bueno",p:42000,col:"#0e8f8c",ink:"#fffaf0",n:3},
- {id:11,t:"Short de baño Billabong palmeras",c:"Shorts",s:"short",talle:"L",est:"Muy bueno",p:22000,col:"#ff4f8b",ink:"#1b1b1b",n:2},
- {id:12,t:"Short deportivo Umbro retro",c:"Shorts",s:"short",talle:"M",est:"Bueno",p:19000,col:"#2b2b2b",ink:"#fffaf0",n:1}
+ {id:1,t:"Falda midi de cuero negro, estilo 90s",c:"Cuero",s:"falda",talle:"M",est:"Muy bueno",p:98000,col:"#1a1819",ink:"#8d948b",n:14},
+ {id:2,t:"Blazer de cuero con cierre de ganchos",c:"Cuero",s:"campera",talle:"S",est:"Excelente",p:165000,col:"#1d1b1c",ink:"#8d948b",n:13},
+ {id:3,t:"Guantes largos de cuero con hebillas",c:"Accesorios",s:"guantes",talle:"Único",est:"Muy bueno",p:42000,col:"#151314",ink:"#8d948b",n:12},
+ {id:4,t:"Vestido slip de satén negro, largo",c:"Vestidos",s:"vestido",talle:"M",est:"Excelente",p:128000,col:"#141214",ink:"#8d948b",n:11},
+ {id:5,t:"Vestido de malla con espalda abierta",c:"Vestidos",s:"vestido",talle:"S",est:"Bueno",p:89000,col:"#1b1a1e",ink:"#8d948b",n:10},
+ {id:6,t:"Mini tejido hombros caídos, punto negro",c:"Vestidos",s:"vestido",talle:"S/M",est:"Muy bueno",p:64000,col:"#1a1819",ink:"#8d948b",n:9},
+ {id:7,t:"Botas altas de cuero, taco fino",c:"Botas",s:"botas",talle:"38",est:"Muy bueno",p:112000,col:"#121112",ink:"#8d948b",n:8},
+ {id:8,t:"Botas con cierre lateral y hebilla",c:"Botas",s:"botas",talle:"39",est:"Bueno",p:96000,col:"#161415",ink:"#8d948b",n:7},
+ {id:9,t:"Gargantilla de cuero con aro y tachas",c:"Accesorios",s:"choker",talle:"Único",est:"Excelente",p:18000,col:"#161415",ink:"#8d948b",n:6},
+ {id:10,t:"Medias con liga color violeta",c:"Accesorios",s:"medias",talle:"Único",est:"Nuevo",p:15000,col:"#6b4685",ink:"#8d948b",n:5},
+ {id:11,t:"Top drapeado ciruela con cuello caído",c:"Tops",s:"top",talle:"S",est:"Muy bueno",p:36000,col:"#3a2748",ink:"#8d948b",n:4},
+ {id:12,t:"Camisa blanca con mangas largas atadas",c:"Tops",s:"top",talle:"M",est:"Bueno",p:44000,col:"#ece7de",ink:"#8d948b",n:3}
 ];
 const state={cat:"Todo",q:"",min:null,max:null,sort:"new"};
 const cart=(()=>{try{return JSON.parse(localStorage.getItem("bb_cart"))||[]}catch(e){return []}})();
 const save=()=>{try{localStorage.setItem("bb_cart",JSON.stringify(cart))}catch(e){}};
 const $=id=>document.getElementById(id);
 
-function art(p){return `<svg viewBox="0 0 120 120" aria-hidden="true"><g fill="${p.col}" stroke="#1b1b1b" stroke-width="3" stroke-linejoin="round">${SHAPES[p.s]}</g><text x="60" y="${p.s==='jean'||p.s==='short'?36:62}" text-anchor="middle" font-family="Archivo Black" font-size="9" fill="${p.ink}">BB</text></svg>`}
+function art(p){return `<svg viewBox="0 0 120 120" aria-hidden="true"><g fill="${p.col}" stroke="#0d0c0d" stroke-width="2.5" stroke-linejoin="round">${SHAPES[p.s]}</g></svg>`}
 
 function renderCats(){
   const cats=["Todo",...new Set(P.map(p=>p.c))];
@@ -198,9 +208,9 @@ function renderGrid(){
   let l=P.filter(p=>(state.cat==="Todo"||p.c===state.cat)&&p.t.toLowerCase().includes(state.q)&&(state.min==null||p.p>=state.min)&&(state.max==null||p.p<=state.max));
   l.sort((a,b)=>state.sort==="asc"?a.p-b.p:state.sort==="desc"?b.p-a.p:b.n-a.n);
   $("grid").innerHTML=l.length?l.map(p=>{const inC=cart.includes(p.id);return `<article class="card">
-    <div class="pic" style="background:${p.col}33">${art(p)}<span class="tag">${p.s}</span></div>
+    <div class="pic">${art(p)}<span class="tag">${p.c}</span></div>
     <div class="info"><h3>${p.t}</h3><div class="meta">Talle ${p.talle} · ${p.est}</div>
-    <div class="row"><span class="pr">${ARS(p.p)}</span><button class="add" data-id="${p.id}" ${inC?"disabled":""}>${inC?"En carrito":"Agregar"}</button></div></div></article>`}).join(""):'<p class="empty">No encontramos nada con esos filtros. Probá con otra búsqueda 🏖️</p>';
+    <div class="row"><span class="pr">${ARS(p.p)}</span><button class="add" data-id="${p.id}" ${inC?"disabled":""}>${inC?"En carrito":"Agregar"}</button></div></div></article>`}).join(""):'<p class="empty">No encontramos nada con esos filtros. Probá con otra búsqueda †</p>';
 }
 function renderCart(){
   const items=cart.map(id=>P.find(p=>p.id===id));
